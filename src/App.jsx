@@ -43,20 +43,24 @@ function App(){
   ,[]);
 
   return(
-    <div className='usercard'>
+    <div className='p-6  '>
       <h1 className="text-center font-bold text-2xl">User List</h1>
 
       {loading ? (
         <p className="text-center text-gray-600">Loading users...</p>
       ) : (
-        users.map(user => (
+        <div className='flex flex-wrap justify-center gap-x-6 gap-y-8 '>
+            {users.map(user => (
           <Card
             key={user.id}
             Name={`Name: ${user.name}`}
             Foi={`Skills: Web Development`}
             About={`Email: ${user.email} | Company: ${user.company.name}`}
           />
-        ))
+            ))}
+        </div>
+        
+      
       )}
     </div>
   );
